@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@font-face {
+  font-family: "Seasons";
+  src: url("/assets/fonts/Fontspring-DEMO-theseasons-bd.otf");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
+*/
+
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  padding: 120px 24px 160px 24px;
+  pointer-events: none;
+  background: #060926;
+}
+
+/* Background Gradient */
+.gradient {
+  position: absolute;
+  width: 388px;
+  height: 515px;
+  top: 91px;
+  filter: blur(125px);
+  transform: rotate(-25.2deg);
+}
+
+.ellipse_1 {
+  position: absolute;
+  width: 214px;
+  height: 219px;
+  left: 24px;
+  top: 91px;
+
+  background: #7b003b;
+  transform: rotate(-25.2deg);
+}
+
+.ellipse_2 {
+  position: absolute;
+  width: 165px;
+  height: 156px;
+  left: 195px;
+  top: 232px;
+
+  background: #05559f;
+  transform: rotate(-25.2deg);
+}
+
+.ellipse_3 {
+  position: absolute;
+  width: 306px;
+  height: 344px;
+  left: -28px;
+  top: 262px;
+  background: #33005a;
+  transform: rotate(-25.2deg);
+}
+
+@media screen and (max-width: 640px) {
+  .main {
+    padding: 0;
+  }
+}
+
+/* Tailwind Styles */
+
+.app {
+  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-8 px-8;
+}
+
+.black_btn {
+  @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
+}
+
+.outline_btn {
+  @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center;
+}
+
+.head_text {
+  @apply text-5xl font-extrabold leading-[1.15] text-white sm:text-6xl;
+}
+
+.secondary_head_text {
+  @apply text-center text-3xl capitalize font-bold mb-4 min-[820px]:mb-8;
+}
+
+.orange_gradient {
+  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
+}
+
+.green_gradient {
+  @apply bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent;
+}
+
+.blue_gradient {
+  @apply bg-gradient-to-r from-[#2B73FF] to-[#9E23FF] bg-clip-text text-transparent;
+}
+
+.white_gradient {
+  @apply text-white text-4xl font-bold bg-gradient-to-b from-[#dde3e4] to-transparent to-85% bg-clip-text text-transparent;
+}
+
+.multi_gradient {
+  @apply rounded-full uppercase py-2 px-5 text-white bg-gradient-to-r from-[#00DAE8] via-[#9267FF] to-[#FF4B4B] text-center text-sm font-inter flex items-center justify-center xl:transform transition duration-500 xl:hover:scale-[1.1];
+}
+
+.desc {
+  @apply mt-2 mb-4 text-white text-xs max-w-2xl text-center;
+}
+
+.search_input {
+  @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
+}
+
+.copy_btn {
+  @apply w-7 h-7 rounded-full bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur flex justify-center items-center cursor-pointer;
+}
+
+.glassmorphism {
+  @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
+}
+
+.prompt_layout {
+  @apply space-y-6 py-8 sm:columns-2 sm:gap-6 xl:columns-3;
+}
+
+/* Feed Component */
+.feed {
+  @apply mt-16 mx-auto w-full max-w-xl flex justify-center items-center flex-col gap-2;
+}
+
+/* Form Component */
+.form_textarea {
+  @apply w-full flex rounded-lg h-[200px] mt-2 p-3 text-sm text-gray-500 outline-0;
+}
+
+.form_input {
+  @apply w-full flex rounded-lg mt-2 p-3 text-sm text-gray-500 outline-0;
+}
+
+/* Nav Component */
+.logo_text {
+  font-family: "Seasons";
+  @apply max-sm:hidden text-2xl text-white tracking-widest;
+}
+
+.dropdown {
+  @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-white min-w-[210px] flex flex-col gap-2;
+}
+
+.dropdown_link {
+  @apply text-sm font-inter text-gray-700 hover:text-gray-500 font-medium;
+}
+
+/* Card Component */
+.responsive_card_holder {
+  @apply flex flex-col justify-center min-[820px]:flex-row min-[820px]:flex-wrap min-[820px]:gap-8 lg:gap-16 lg:flex-wrap lg:flex-row;
+}
+
+.card {
+  @apply text-center my-4 min-[820px]:my-0 break-inside-avoid rounded-2xl shadow-[0_0_15px_theme('colors.gray.950')] bg-gradient-to-br from-[#000340] to-[#361744] p-6 pb-14 backdrop-blur-lg backdrop-filter md:w-[360px] w-full;
+}
+
+.card_hero {
+  @apply text-9xl text-white py-4;
+}
+
+.card_title {
+  @apply text-xl font-bold pt-6 pb-3 uppercase bg-gradient-to-r from-[#FFEA22] via-red-400 to-[#FFEA22] bg-clip-text text-transparent;
+}
+
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+.flex-start {
+  @apply flex justify-start items-start;
+}
+
+.flex-end {
+  @apply flex justify-end items-center;
+}
+
+.flex-between {
+  @apply flex justify-between items-center;
+}
