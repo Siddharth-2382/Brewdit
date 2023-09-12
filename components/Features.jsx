@@ -3,7 +3,7 @@ import Card from "./Card";
 const Features = () => {
   return (
     <>
-      <h2 className="blue_gradient secondary_head_text">
+      <h2 className="blue_gradient secondary_head_text mb-4 min-[820px]:mb-8">
         Features you'll love
       </h2>
       <div className="responsive_card_holder">
