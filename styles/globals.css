@@ -90,7 +90,7 @@
 }
 
 .secondary_head_text {
-  @apply text-center text-3xl capitalize font-bold mb-4 min-[820px]:mb-8;
+  @apply text-center text-3xl capitalize font-bold;
 }
 
 .orange_gradient {
@@ -176,6 +176,23 @@
 
 .card_title {
   @apply text-xl font-bold pt-6 pb-3 uppercase bg-gradient-to-r from-[#FFEA22] via-red-400 to-[#FFEA22] bg-clip-text text-transparent;
+}
+
+/* How it works Component */
+.steps {
+  @apply flex flex-col;
+}
+
+.step {
+  @apply h-[7.5rem] pl-2;
+}
+
+.step_title {
+  @apply text-xl font-bold uppercase text-white;
+}
+
+.step_desc {
+  @apply text-gray-500 text-sm;
 }
 
 .flex-center {
