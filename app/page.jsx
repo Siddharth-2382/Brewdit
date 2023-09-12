@@ -3,6 +3,7 @@
 import Explore from "@components/Explore";
 import Features from "@components/Features";
 import Hero from "@components/Hero";
+import HowItWorks from "@components/HowItWorks";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <Hero />
       <Explore />
       <Features />
+      <HowItWorks />
     </section>
   );
 };
