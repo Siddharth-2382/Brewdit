@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Hero = () => {
   return (
     <>
@@ -11,14 +13,9 @@ const Hero = () => {
       <p className="desc">
         Effortlessly Review, Approve and Upload edited Videos & Thumbnails.
       </p>
-      <button
-        type="button"
-        key=""
-        onClick={() => {}}
-        className="multi_gradient"
-      >
+      <Link href="/pricing" className="multi_gradient">
         get started
-      </button>
+      </Link>
     </>
   );
 };

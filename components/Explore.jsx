@@ -1,7 +1,7 @@
 const Explore = () => {
   return (
     <>
-      <a href="#feature_section" className="text-center mt-24 mb-32">
+      <a href="#feature_section" className="text-center mt-24 mb-36">
         <h2 className="white_gradient">EXPLORE</h2>
         <svg
           xmlns="http://www.w3.org/2000/svg"

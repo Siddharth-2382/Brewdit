@@ -32,7 +32,7 @@ const Nav = () => {
       </Link>
 
       {/* Mobile Navigation  */}
-      <div className="flex relative">
+      <div className="flex md:hidden relative">
         {session?.user ? (
           <div className="flex">
             <Image
@@ -76,6 +76,47 @@ const Nav = () => {
                   className="multi_gradient"
                 >
                   Sign In
+                </button>
+              ))}
+          </>
+        )}
+      </div>
+
+      {/* Desktop Navigation */}
+      <div className="md:flex hidden">
+        {session?.user ? (
+          <div className="flex gap-3 md:gap-5">
+            <button
+              type="button"
+              onClick={signOut}
+              className="white_btn uppercase"
+            >
+              Sign Out
+            </button>
+
+            <Link href="/profile">
+              <Image
+                src={session?.user.image}
+                width={37}
+                height={37}
+                className="rounded-full"
+                alt="profile"
+              />
+            </Link>
+          </div>
+        ) : (
+          <>
+            {providers &&
+              Object.values(providers).map((provider) => (
+                <button
+                  type="button"
+                  key={provider.name}
+                  onClick={() => {
+                    signIn(provider.id);
+                  }}
+                  className="multi_gradient"
+                >
+                  Sign in
                 </button>
               ))}
           </>
