@@ -8,9 +8,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 
-  Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
-*/
+html {
+  scroll-behavior: smooth;
+}
 
 .main {
   width: 100vw;
@@ -185,6 +185,10 @@
 
 .step {
   @apply h-[7.5rem] pl-2;
+}
+
+.even_step {
+  @apply h-[7.5rem] mt-[7.5rem] text-left;
 }
 
 .step_title {

@@ -3,9 +3,10 @@ import TimelinePath from "./TimelinePath";
 const HowItWorks = () => {
   return (
     <>
-      <h2 className="blue_gradient secondary_head_text my-8">How it works?</h2>
-
-      <div className="flex w-full">
+      <h2 className="blue_gradient secondary_head_text mt-52 mb-8">
+        How it works?
+      </h2>
+      <div className="flex w-full md:w-3/5">
         <TimelinePath />
         <div className="steps">
           <div className="step">
@@ -27,14 +28,14 @@ const HowItWorks = () => {
             <h2 className="step_title">Choose Your Plan</h2>
             <p className="step_desc">
               Explore our subscription plans and select the one that aligns with
-              your ambitions.{" "}
+              your ambitions.
             </p>
           </div>
           <div className="step">
             <h2 className="step_title">Editors Share Creations</h2>
             <p className="step_desc">
               Let your editors shine. They can effortlessly share their
-              masterpieces - edited videos and captivating thumbnails - directly
+              masterpieces - edited videos and captivating thumbnails directly
               onto our platform.
             </p>
           </div>
