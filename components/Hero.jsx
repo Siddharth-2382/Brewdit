@@ -13,7 +13,7 @@ const Hero = () => {
       <p className="desc">
         Effortlessly Review, Approve and Upload edited Videos & Thumbnails.
       </p>
-      <Link href="/pricing" className="multi_gradient">
+      <Link href="/pricing" className="multi_gradient hover_grow">
         get started
       </Link>
     </>

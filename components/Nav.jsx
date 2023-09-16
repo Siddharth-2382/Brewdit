@@ -89,7 +89,7 @@ const Nav = () => {
             <button
               type="button"
               onClick={signOut}
-              className="white_btn uppercase"
+              className="white_btn uppercase hover_grow"
             >
               Sign Out
             </button>
@@ -114,7 +114,7 @@ const Nav = () => {
                   onClick={() => {
                     signIn(provider.id);
                   }}
-                  className="multi_gradient"
+                  className="multi_gradient hover_grow"
                 >
                   Sign in
                 </button>
