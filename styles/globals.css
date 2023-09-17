@@ -230,3 +230,17 @@ html {
 .flex-between {
   @apply flex justify-between items-center;
 }
+
+/* Footer Component */
+
+.footer {
+  @apply relative w-full flex flex-col text-slate-100 mt-8 px-8 xl:px-28 border-t border-gray-800 bg-[#060926];
+}
+
+.footer_links {
+  @apply flex-1 w-full flex md:justify-end flex-wrap max-md:mt-10 gap-20;
+}
+
+.footer_link {
+  @apply flex flex-col gap-3 text-base min-w-[170px];
+}
