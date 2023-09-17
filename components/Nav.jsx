@@ -106,7 +106,16 @@ const Nav = () => {
           </div>
         ) : (
           <>
-            {providers &&
+            {!providers ? (
+              <button
+                type="button"
+                className="multi_gradient hover_grow"
+                disabled
+              >
+                Sign in
+              </button>
+            ) : (
+              providers &&
               Object.values(providers).map((provider) => (
                 <button
                   type="button"
@@ -118,7 +127,8 @@ const Nav = () => {
                 >
                   Sign in
                 </button>
-              ))}
+              ))
+            )}
           </>
         )}
       </div>
