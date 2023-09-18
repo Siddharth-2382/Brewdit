@@ -12,6 +12,12 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .main {
   width: 100vw;
   min-height: 100vh;
@@ -74,11 +80,15 @@ html {
 /* Tailwind Styles */
 
 .app {
-  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-8 px-8 mb-6;
+  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-8 px-8 mb-6 w-full;
+}
+
+.transparent_btn {
+  @apply rounded-full border border-white bg-transparent py-1.5 px-5 text-white text-center text-sm font-inter flex items-center justify-center xl:hover:transition-all duration-[250ms] xl:hover:bg-white xl:hover:text-black;
 }
 
 .black_btn {
-  @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all duration-[250ms] hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
 }
 
 .white_btn {
@@ -130,11 +140,11 @@ html {
 }
 
 .copy_btn {
-  @apply w-7 h-7 rounded-full bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur flex justify-center items-center cursor-pointer;
+  @apply w-7 h-7 rounded-full bg-black/10 shadow-[inset_10px_-50px_94px_0_rgb(0,0,0,0.2)] backdrop-blur flex justify-center items-center cursor-pointer;
 }
 
 .glassmorphism {
-  @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
+  @apply rounded-xl border border-gray-800 bg-black/20 shadow-[inset_10px_-50px_94px_0_rgb(0,0,0,0.2)] backdrop-blur p-8;
 }
 
 .prompt_layout {
@@ -234,7 +244,7 @@ html {
 /* Footer Component */
 
 .footer {
-  @apply relative w-full flex flex-col text-slate-100 mt-8 px-8 xl:px-28 border-t border-gray-800 bg-[#060926];
+  @apply relative w-full flex flex-col text-slate-100 mt-auto px-8 xl:px-28 border-t border-gray-800 bg-[#060926];
 }
 
 .footer_links {
@@ -243,4 +253,8 @@ html {
 
 .footer_link {
   @apply flex flex-col gap-3 text-base min-w-[170px];
+}
+
+.footer__copyrights-link {
+  @apply flex-1 flex sm:justify-end justify-center max-sm:mt-4 gap-10;
 }
