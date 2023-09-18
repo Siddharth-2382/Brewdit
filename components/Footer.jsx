@@ -29,40 +29,55 @@ const Footer = () => {
         <div className="footer_links">
           <div className="footer_link">
             <h3 className="">About</h3>
-            <Link href="/howitworks" className="text-gray-500">
+            <Link href="/how-it-works" className="text-gray-500 w-fit">
               How It Works
+            </Link>
+            <Link href="/contact-us" className="text-gray-500 w-fit">
+              Contact Us
             </Link>
           </div>
           <div className="footer_link">
             <h3 className="">Resources</h3>
-            <Link href="/docs" className="text-gray-500">
+            <Link href="/docs" className="text-gray-500 w-fit">
               Docs
             </Link>
-            <Link href="/pricing" className="text-gray-500">
+            <Link href="/pricing" className="text-gray-500 w-fit">
               Pricing
             </Link>
-            <Link href="/guides" className="text-gray-500">
+            <Link href="/guides" className="text-gray-500 w-fit">
               Guides
             </Link>
-            <Link href="/help" className="text-gray-500">
+            <Link href="/help" className="text-gray-500 w-fit">
               Help
             </Link>
           </div>
           <div className="footer_link">
             <h3 className="">Socials</h3>
-            <Link href="/" className="text-gray-500">
+            <Link href="/" className="text-gray-500 w-fit">
               Instagram
             </Link>
-            <Link href="/" className="text-gray-500">
+            <Link href="/" className="text-gray-500 w-fit">
               Facebook
             </Link>
-            <Link href="/" className="text-gray-500">
+            <Link href="/" className="text-gray-500 w-fit">
               Twitter
             </Link>
-            <Link href="/" className="text-gray-500">
+            <Link href="/" className="text-gray-500 w-fit">
               Discord
             </Link>
           </div>
+        </div>
+      </div>
+      <div className="flex justify-around items-center flex-wrap mt-10 border-t border-gray-800 py-10">
+        <p>@2023 Brewdit. All rights reserved</p>
+
+        <div className="footer__copyrights-link">
+          <Link href="/" className="text-gray-500">
+            Privacy & Policy
+          </Link>
+          <Link href="/" className="text-gray-500">
+            Terms & Condition
+          </Link>
         </div>
       </div>
     </footer>
