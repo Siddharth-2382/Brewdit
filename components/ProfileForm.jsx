@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const ProfileForm = ({ post, setPost, submitting, handleSubmit }) => {
+const ProfileForm = ({ profile, setProfile, submitting, handleSubmit }) => {
   return (
     <section className="w-full max-w-full flex flex-col items-center mb-20">
       <h1 className="head_text">
@@ -10,32 +10,52 @@ const ProfileForm = ({ post, setPost, submitting, handleSubmit }) => {
       <form
         onSubmit={handleSubmit}
         className="mt-10 w-full max-w-xl flex flex-col gap-7 glassmorphism"
+        encType="multipart/form-data"
       >
         <label>
           <span className="font-satoshi font-semibold text-base text-white">
             Username
           </span>
-
           <input
-            value={post.prompt}
-            onChange={(e) => setPost({ ...post, prompt: e.target.value })}
+            value={profile.username}
+            name="userName"
             placeholder="Your Name"
-            required
             className="form_input"
+            onChange={(e) =>
+              setProfile({ ...profile, username: e.target.value })
+            }
+            required
           />
         </label>
 
         <label>
           <span className="font-satoshi font-semibold text-base text-white">
-            Profile photo
+            First Name
           </span>
           <input
-            value={post.tag}
-            onChange={(e) => setPost({ ...post, tag: e.target.value })}
-            type="file"
-            accept="image/*"
+            value={profile.firstname}
+            name="firstName"
+            placeholder="Your Name"
+            className="form_input"
+            onChange={(e) =>
+              setProfile({ ...profile, firstname: e.target.value })
+            }
             required
-            className="mt-2 block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-white file:text-[#9E23FF] hover:file:bg-[#9E23FF] hover:file:text-white"
+          />
+        </label>
+        <label>
+          <span className="font-satoshi font-semibold text-base text-white">
+            Last Name
+          </span>
+          <input
+            value={profile.lastname}
+            name="lastName"
+            placeholder="Your Name"
+            className="form_input"
+            onChange={(e) =>
+              setProfile({ ...profile, lastname: e.target.value })
+            }
+            required
           />
         </label>
 
