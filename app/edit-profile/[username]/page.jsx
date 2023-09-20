@@ -1,30 +1,51 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 import ProfileForm from "@components/ProfileForm";
 
-const EditProfile = () => {
+const EditProfile = ({ params }) => {
   const router = useRouter();
   const { data: session } = useSession();
+  const [profile, setProfile] = useState({
+    username: "",
+    firstname: "",
+    lastname: "",
+  });
 
   const [submitting, setIsSubmitting] = useState(false);
-  const [post, setPost] = useState({ prompt: "", tag: "" });
 
-  const createPrompt = async (e) => {
+  useEffect(() => {
+    const getUserDetails = async () => {
+      const response = await fetch(`/api/profile/${params.username}`);
+      const data = await response.json();
+      setProfile({
+        username: data.username,
+        firstname: data.firstname,
+        lastname: data.lastname,
+      });
+    };
+
+    if (session?.user.id) getUserDetails();
+  }, [session?.user.id]);
+
+  const editProfile = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const id = session?.user.id;
+    const userId = session?.user.id;
+    if (!userId) return alert("Missing UserId!");
+
     try {
-      const response = await fetch(`/api/profile/${id}`, {
-        method: "POST",
+      const response = await fetch(`/api/profile/${params.username}`, {
+        method: "PATCH",
         body: JSON.stringify({
-          prompt: post.prompt,
-          userId: session?.user.id,
-          tag: post.tag,
+          userId: userId,
+          username: profile.username,
+          firstname: profile.firstname,
+          lastname: profile.lastname,
         }),
       });
 
@@ -38,13 +59,15 @@ const EditProfile = () => {
     }
   };
 
-  return (
+  return session?.user.id ? (
     <ProfileForm
-      post={post}
-      setPost={setPost}
+      profile={profile}
+      setProfile={setProfile}
       submitting={submitting}
-      handleSubmit={createPrompt}
+      handleSubmit={editProfile}
     />
+  ) : (
+    router.push("/")
   );
 };
 
