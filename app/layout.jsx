@@ -1,6 +1,7 @@
+import { ClerkProvider } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
 import Footer from "@components/Footer";
 import Nav from "@components/Nav";
-import Provider from "@components/Provider";
 import "@styles/globals.css";
 
 export const metadata = {
@@ -23,7 +24,17 @@ const RootLayout = ({ children }) => {
       </head>
 
       <body>
-        <Provider>
+        <ClerkProvider
+          appearance={{
+            baseTheme: dark,
+            elements: {
+              formButtonPrimary: "multi_gradient",
+              formFieldInput: "bg-white focus:text-black",
+              footerActionLink: "text-white underline",
+              card: "bg-gradient-to-br from-[#000340] to-[#361744] mt-8",
+            },
+          }}
+        >
           <div className="main">
             <div className="gradient">
               <div className="ellipse_1"></div>
@@ -36,7 +47,7 @@ const RootLayout = ({ children }) => {
             {children}
           </main>
           <Footer />
-        </Provider>
+        </ClerkProvider>
       </body>
     </html>
   );
