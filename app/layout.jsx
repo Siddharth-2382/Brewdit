@@ -1,7 +1,7 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
-import Footer from "@components/Footer";
-import Nav from "@components/Nav";
+import Footer from "@components/shared/Footer";
+import Nav from "@components/shared/Nav";
 import "@styles/globals.css";
 
 export const metadata = {
@@ -31,7 +31,7 @@ const RootLayout = ({ children }) => {
               formButtonPrimary: "multi_gradient",
               formFieldInput: "bg-white focus:text-black",
               footerActionLink: "text-white underline",
-              card: "bg-gradient-to-br from-[#000340] to-[#361744] mt-8",
+              card: "bg-gradient-to-br from-[#000340] to-[#361744] mb-24 border-0",
             },
           }}
         >

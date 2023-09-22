@@ -1,9 +1,9 @@
 "use client";
 
-import Explore from "@components/Explore";
-import Features from "@components/Features";
-import Hero from "@components/Hero";
-import HowItWorks from "@components/HowItWorks";
+import Explore from "@components/landing/Explore";
+import Features from "@components/landing/Features";
+import Hero from "@components/landing/Hero";
+import HowItWorks from "@components/landing/HowItWorks";
 
 const Home = () => {
   return (

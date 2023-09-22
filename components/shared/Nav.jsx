@@ -2,18 +2,9 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useRef } from "react";
-import {
-  SignedIn,
-  SignedOut,
-  UserButton,
-  RedirectToSignIn,
-} from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 const Nav = () => {
-  const [toggleDropdown, setToggleDropdown] = useState(false);
-  const dropdownRef = useRef(null);
-
   return (
     <nav className="flex-between w-full pt-6 mb-16">
       <Link href="/" className="flex gap-2 flex-center">

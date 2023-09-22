@@ -1,3 +1,5 @@
+"use client";
+
 const PriceCard = (props) => {
   return (
     <div className="card price_card flex flex-col justify-between items-center">
