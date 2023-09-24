@@ -34,6 +34,8 @@ const RootLayout = ({ children }) => {
               card: "bg-gradient-to-br from-[#000340] to-[#361744] mb-24 border-0",
             },
           }}
+          afterSignInUrl="/dashboard"
+          afterSignUpUrl="/dashboard"
         >
           <div className="main">
             <div className="gradient">
