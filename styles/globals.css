@@ -80,7 +80,7 @@ body {
 /* Tailwind Styles */
 
 .app {
-  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-8 px-8 mb-6 w-full;
+  @apply relative z-10 flex justify-center items-center flex-col px-4 mb-6 w-full;
 }
 
 .transparent_btn {
@@ -128,7 +128,7 @@ body {
 }
 
 .multi_gradient {
-  @apply rounded-full uppercase py-2 px-5 text-white bg-gradient-to-r from-[#00DAE8] via-[#9267FF] to-[#FF4B4B] text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-full uppercase py-2 px-5 text-white bg-gradient-to-r from-[#00DAE8] via-[#9267FF] to-[#FF4B4B] text-center font-inter flex items-center justify-center;
 }
 
 .desc {
@@ -144,7 +144,7 @@ body {
 }
 
 .glassmorphism {
-  @apply rounded-xl border border-gray-800 bg-black/20 shadow-[inset_10px_-50px_94px_0_rgb(0,0,0,0.2)] backdrop-blur p-8;
+  @apply rounded-xl border border-gray-800 bg-black/20 shadow-[inset_10px_-50px_94px_0_rgb(0,0,0,0.2)] backdrop-blur;
 }
 
 .prompt_layout {
@@ -244,7 +244,7 @@ body {
 /* Footer Component */
 
 .footer {
-  @apply relative w-full flex flex-col text-slate-100 mt-auto px-8 xl:px-28 border-t border-gray-800 bg-[#060926];
+  @apply relative w-full flex flex-col text-slate-100 mt-auto px-8 xl:px-24 border-t border-gray-800 bg-[#060926];
 }
 
 .footer_links {
@@ -257,4 +257,30 @@ body {
 
 .footer__copyrights-link {
   @apply flex-1 flex sm:justify-end justify-center max-sm:mt-4 gap-10;
+}
+
+/* Left Sidebar Component */
+.leftsidebar_link {
+  @apply relative flex justify-start font-inter uppercase gap-4 rounded-lg p-4 lg:p-4;
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+    border-radius: 2px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #09090a;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #5c5c7b;
+    border-radius: 50px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #7878a3;
+  }
 }
