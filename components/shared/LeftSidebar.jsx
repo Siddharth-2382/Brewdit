@@ -3,7 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { SignOutButton, SignedIn, useAuth } from "@clerk/nextjs";
+import {
+  OrganizationSwitcher,
+  SignOutButton,
+  SignedIn,
+  useAuth,
+} from "@clerk/nextjs";
 import { sidebarLinks } from "@constants";
 
 const LeftSidebar = () => {
@@ -13,8 +18,9 @@ const LeftSidebar = () => {
   const { userId } = useAuth();
 
   return (
-    <div className="custom-scrollbar glassmorphism text-white lg:py-4 mb-10 w-fit">
+    <div className="custom-scrollbar glassmorphism text-white lg:py-4 h-max sticky top-4">
       <div className="flex w-full flex-1 flex-col gap-6 lg:px-4">
+        <OrganizationSwitcher />
         {sidebarLinks.map((link) => {
           const isActive =
             (pathname.includes(link.route) && link.route.length > 1) ||
@@ -46,7 +52,7 @@ const LeftSidebar = () => {
       <div className="mt-32 lg:px-4">
         <SignedIn>
           <SignOutButton signOutCallback={() => router.push("/sign-in")}>
-            <div className="flex cursor-pointer gap-4 p-4 lg:py-4 lg:pr-4">
+            <div className="flex cursor-pointer gap-4 p-4 lg:py-4 lg:pr-4 hover_grow">
               <Image
                 src="/assets/icons/logout.svg"
                 alt="logout"
