@@ -80,7 +80,7 @@ body {
 /* Tailwind Styles */
 
 .app {
-  @apply relative z-10 flex justify-center items-center flex-col px-4 mb-6 w-full;
+  @apply relative z-10 flex justify-center items-center flex-col px-4 mb-4 w-full;
 }
 
 .transparent_btn {
